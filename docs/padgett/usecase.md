@@ -1,6 +1,6 @@
 # TITLE for Use Case Documentation Page
 
-**Authors, Affiliations**  
+**Padgett**  
 
 Introductory Text.  High-level overview of product. A condimentum vitae sapien pellentesque habitant morbi tristique.
 
