@@ -35,7 +35,9 @@ This case study is divided into three basic components:
 
 To access QGIS via DesignSafe go to [Workspace -> Tools & Applications -> Visualization -> QGIS Desktop 3.16](https://www.designsafe-ci.org/rw/workspace/#!/qgis-duvd-3.16.3u2). You will be prompted the following window:
 
-![Fig2](img/Fig2.jpg)
+![Fig2](img/Fig2_Updated.jpg)
+
+Change the desktop resolution according to your screen and provide a name for your job. Hit *Launch* when you finish, after a couple of minutes your interactive session will start:
 
 ### Header2 Subheading
 
