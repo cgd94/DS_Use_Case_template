@@ -20,16 +20,23 @@ This use case study shows how to automate the extraction of storm intensity para
 
 ### Description 
 
-This case study aims to support pre-data processing workflows for machine learning applications and regional risk analysis. When developing predictive or surrogate models for the response of distributed infrastructure and structural systems, intensity parameters need to be associated with each component of the system (e.g., buildings, bridges, roads) under varying hazard intensity or different hazard scenarios. To accomplish this and given the different resolutions of the hazard and infrastructure data, geographical tools need to be used to associate the intensity parameters with the distributed infrastructure or portfolio components. In this case study, python codes were developed to automate geospatial analysis and visualization tasks using QGIS, an open-source GIS software. As a proof of concept, 15 storms with varying forward velocity and sea-level rise, are used to extract the surge and significant wave height at specific house locations using the building stock of Galveston Island, TX. The workflow of analysis is as follows:
+This case study aims to support pre-data processing workflows for machine learning applications and regional risk analysis. When developing predictive or surrogate models for the response of distributed infrastructure and structural systems, intensity parameters need to be associated with each component of the system (e.g., buildings, bridges, roads) under varying hazard intensity or different hazard scenarios. To accomplish this and given the different resolutions of the hazard and infrastructure data, geographical tools need to be used to associate the intensity parameters with the distributed infrastructure or portfolio components. In this case study, python codes were developed to automate geospatial analysis and visualization tasks using QGIS. 
 
+This case study is divided into four basic components:
+
+> 1. Introduction and decription of the input data
+> 2. Opening a session in QGIS via DesignSafe
+> 3. Modify user inputs and run the python script
+> 4. Visualization of the outputs
+
+## Introduction and description of the input data
+
+In this example, the automated procedure to extract intensity parameters is leveraged to obtain the surge elevation and significant wave heights of 10 storms at specific house locations using the building stock of Galveston Island, TX. The surge elevation and the significant wave height are important parameters when evaluating the structural performance of houses under hurricane loads, and have been used to formulate different fragility functions (e.g., [Tomiczek, Kennedy, and Rogers (2014)](https://doi.org/10.1061/(ASCE)WW.1943-5460.0000212); [Nofal et al. (2021)](https://doi.org/10.1061/(ASCE)ST.1943-541X.0003144)). The storms are synthetic variations of storm FEMA 33, a probabilistic storm that is approximately equivalent to a 100-year return period storm in the Houston-Galveston region. The 10 storms are obtained from ADCIRC+SWAN simulations of storm FEMA 33 with varying forward storm velocity and sea-level rise. For more details on the storm definition, the user can refer to [Ebad et al. (2020)](https://doi.org/10.3389/fbuil.2020.00104) and [González-Dueñas and Padgett (2021)](https://doi.org/10.3389/fbuil.2021.690715). 
+
+The workflow of analysis is as follows:
 
 ![caption](img/Fig1_Updated.jpg)
 
-This case study is divided into three basic components:
-
-1. Opening a session in QGIS via DesignSafe
-2. Setting the python environment
-3. Visualization of the outputs
 
 ## Opening a QGIS session in DesignSafe
 
@@ -43,7 +50,7 @@ Change the desktop resolution according to your screen size preferences, provide
 
 You will be directed to an interactive QGIS session, create a new project by clicking the *New Project* icon or press *Ctrl+N*:
 
-
+![Fig4](img/Fig4.jpg)
 
 ### Header2 Subheading
 
