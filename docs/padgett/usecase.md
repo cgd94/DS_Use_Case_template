@@ -39,6 +39,8 @@ To access QGIS via DesignSafe go to [Workspace -> Tools & Applications -> Visual
 
 Change the desktop resolution according to your screen and provide a name for your job. Hit *Launch* when you finish, after a couple of minutes your interactive session will start:
 
+![Fig3](img/Fig3_Updated.jpg)
+
 ### Header2 Subheading
 
 In aliquam sem fringilla ut morbi. Interdum varius sit amet mattis vulputate enim nulla aliquet. Sit amet mattis vulputate enim nulla.  In egestas erat imperdiet sed euismod nisi porta lorem. Eget nulla facilisi etiam dignissim diam.  Facilisi cras fermentum odio eu feugiat. Velit aliquet sagittis id consectetur. Vel quam elementum pulvinar etiam.  Ut diam quam nulla porttitor massa id neque aliquam. Sodales ut etiam sit amet nisl.  Scelerisque varius morbi enim nunc faucibus a. Sit amet volutpat consequat mauris nunc. Et leo duis ut diam.
