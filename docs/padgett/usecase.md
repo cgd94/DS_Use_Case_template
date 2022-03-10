@@ -23,13 +23,19 @@ This use case study shows how to automate the extraction of storm intensity para
 This case study aims to support pre-data processing workflows for machine learning applications and regional risk analysis. When developing predictive or surrogate models for the response of distributed infrastructure and structural systems, intensity parameters need to be associated with each component of the system (e.g., buildings, bridges, roads) under varying hazard intensity or different hazard scenarios. To accomplish this and given the different resolutions of the hazard and infrastructure data, geographical tools need to be used to associate the intensity parameters with the distributed infrastructure or portfolio components. In this case study, python codes were developed to automate geospatial analysis and visualization tasks using QGIS, an open-source GIS software. As a proof of concept, 15 storms with varying forward velocity and sea-level rise, are used to extract the surge and significant wave height at specific house locations using the building stock of Galveston Island, TX. The workflow of analysis is as follows:
 
 
-![caption](img/Fig1.jpg)
+![caption](img/Fig1_Updated.jpg)
 
+This case study is divided into three basic components:
 
+1. Opening a session in QGIS via DesignSafe
+2. Setting the python environment
+3. Visualization of the outputs
 
-## Header 2
+## Opening a QGIS session in DesignSafe
 
-Euismod nisi porta lorem mollis aliquam ut. Tincidunt ornare massa eget egestas purus viverra accumsan in. Varius quam quisque id diam vel. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Placerat duis ultricies lacus sed turpis tincidunt id aliquet risus. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et netus. Egestas sed sed risus pretium quam vulputate. Posuere morbi leo urna molestie at elementum. Eget magna fermentum iaculis eu non diam. Nisl tincidunt eget nullam non nisi. Sit amet risus nullam eget felis eget nunc lobortis mattis.
+To access QGIS via DesignSafe go to [Workspace -> Tools & Applications -> Visualization -> QGIS Desktop 3.16](https://www.designsafe-ci.org/rw/workspace/#!/qgis-duvd-3.16.3u2). You will be prompted the following window:
+
+![Fig2](img/Fig2.jpg)
 
 ### Header2 Subheading
 
