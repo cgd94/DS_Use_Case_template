@@ -37,9 +37,13 @@ To access QGIS via DesignSafe go to [Workspace -> Tools & Applications -> Visual
 
 ![Fig2](img/Fig2_Updated.jpg)
 
-Change the desktop resolution according to your screen and provide a name for your job. Hit *Launch* when you finish, after a couple of minutes your interactive session will start:
+Change the desktop resolution according to your screen size preferences, provide a name for your job, and hit *Launch* when you finish. After a couple of minutes your interactive session will start, click *Connect*:
 
-![Fig3](img/Fig3_Updated.jpg)
+![Fig3](img/Fig3_Updated.png)
+
+You will be directed to an interactive QGIS session, create a new project by clicking the *New Project* icon or press *Ctrl+N*:
+
+
 
 ### Header2 Subheading
 
