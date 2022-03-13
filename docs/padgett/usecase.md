@@ -70,7 +70,7 @@ To access QGIS via DesignSafe go to [Workspace -> Tools & Applications -> Visual
 
 Change the desktop resolution according to your screen size preferences, provide a name for your job, and hit *Launch* when you finish. After a couple of minutes your interactive session will start, click *Connect*:
 
-![Fig3](img/Fig3_Updated.png)
+![Fig3](img/Fig3_Updated2.jpg)
 
 You will be directed to an interactive QGIS session, create a new project by clicking the *New Project* icon or press *Ctrl+N*:
 
@@ -90,9 +90,28 @@ A python script called [IM_Extract](https://www.designsafe-ci.org/data/browser/p
 
 Once the folder of analysis is created in your Data Depot, we can proceed to perform the geospatial analysis in QGIS. Open the python console within QGIS, click the *Show Editor* button and click *Open Script*:
 
+![Fig5](img/Fig5.jpg)
+
 In the file explorer, go to your data folder and open the [IM_Extract](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/QGIS/IM_Extract) script:
 
+![Fig6](img/Fig6_Updated.jpg)
 
+Modify the path of the folder for your own data folder in *line 17*:
+``` python
+path= r"/home/ubuntu/mydata/**name of your folder**"
+```
+If desired, you can change the interpolation method *(line 75 of the script)* and the cell size used for the interpolation *(line 22 of the script)*:
+
+``` python
+# Line 22
+    # 2. Change cell size (defalt is 0.001)
+    cell_size = 0.001
+# Line 75
+    # Interpolation method
+      alg = "qgis:tininterpolation"
+```
+
+Once you finish the modifications, click *Run Script*.
 
 ## Visualization of the outputs
 
