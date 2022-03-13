@@ -7,6 +7,7 @@
 This use case study shows how to automate the extraction of storm intensity parameters at the structure level to support regional risk assessment studies. This example leverages QGIS and python scripts to obtain the surge elevation and significant wave height from multiple storms at specific building locations. The case study also shows how to visualize the outputs in QGIS and export them as a web map. The followig DesignSafe resources are leveraged in this example: 
 
 [Geospatial data analysis and Visualization on DS - QGIS](https://www.designsafe-ci.org/rw/workspace/#!/qgis-duvd-3.16.3u2)
+[Jupyter notebooks on DS Jupyterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis)
 
 ## Background 
 
@@ -24,21 +25,24 @@ This case study aims to support pre-data processing workflows for machine learni
 
 This case study is divided into four basic components:
 
-> 1. Introduction and decription of the input data
-> 2. Opening a session in QGIS via DesignSafe
-> 3. Modify user inputs and run the python script
+> 1. Introduction and workflow of analysis
+> 2. Storm data analysis using Jupyter notebooks
+> 3. Geospatial analysis via QGIS
 > 4. Visualization of the outputs
 
-## Introduction and description of the input data
+## Introduction and worflow of analysis
 
-In this example, the automated procedure to extract intensity parameters is leveraged to obtain the surge elevation and significant wave height of 10 different storms at specific house locations using the building stock of Galveston Island, TX. The surge elevation and the significant wave height are important parameters when evaluating the structural performance of houses under hurricane loads, and have been used to formulate different fragility functions (e.g., [Tomiczek, Kennedy, and Rogers (2014)](https://doi.org/10.1061/(ASCE)WW.1943-5460.0000212); [Nofal et al. (2021)](https://doi.org/10.1061/(ASCE)ST.1943-541X.0003144)). The 10 storms are obtained from ADCIRC+SWAN simulations of storm FEMA 33 with varying forward storm velocity and sea-level rise. Storm FEMA 33 is a probabilistic storm that is approximately equivalent to a 100-year return period storm in the Houston-Galveston region. For more details on the storm definition, the user can refer to [Ebad et al. (2020)](https://doi.org/10.3389/fbuil.2020.00104) and [González-Dueñas and Padgett (2021)](https://doi.org/10.3389/fbuil.2021.690715). 
+In this example, the automated procedure to extract intensity parameters is leveraged to obtain the surge elevation and significant wave height at specific house locations for different storm scenarios. The surge elevation and the significant wave height are important parameters when evaluating the structural performance of houses under hurricane loads, and have been used to formulate different building fragility functions (e.g., [Tomiczek, Kennedy, and Rogers (2014)](https://doi.org/10.1061/(ASCE)WW.1943-5460.0000212); [Nofal et al. (2021)](https://doi.org/10.1061/(ASCE)ST.1943-541X.0003144)). As a proof of concept, the intensity parameters (i.e., surge elevation and significant wave height) will be extracted for 3 different storms using the building portfolio of Galveston Island, Texas. The storms correspond to synthetic variations of storm FEMA 33, a probabilistic storm approximately equivalent to a 100-year return period storm in the Houston-Galveston region. The storms are simulated using ADCIC+SWAN numerical models of storm FEMA33, with varying forward storm velocity and sea-level rise. For more details on the storm definition, the user can refer to [Ebad et al. (2020)](https://doi.org/10.3389/fbuil.2020.00104) and [González-Dueñas and Padgett (2021)](https://doi.org/10.3389/fbuil.2021.690715). 
 
-The post-processing of the storm data provides point data (vector data) in each of the grid points used to define the grid for the computational domain fo the simulation. However, these points have a different resolution than the infrastructure system under analysis, for which is necessary to convert the storms outputs to a surface data and then extract at the locatiosn of interest. Therefore, using the vector data from the ADCIRC+SWAN simulations of each storm, a raster (surface) is created, which then is used to extract the surge and significant wave height at each house. This is repeated for each one of the 10 storms and then the data is exported as a csv file, combining the housing building inventory data with the storm intensity parameters. This file is used to support further analysis in the context of risk assessment or machine learning applications, as predictors or response of a system. The workflow of analysis is as follows:
+In order to relate the storm data to the building portfolio data, it is necessary to convert the storm outputs to a surface data and then extract at the locations of interest. First, the output files from the ADCIRC+SWAN simulation corresponding to the surge elevation (file fort.63.nc) and significant wave height (file swan_HS.63.nc) need to be converted to a format that can be exported to a GIS (Geographical Information System) software. This pre-processing of the storm data provides the surge elevation and significant wave height in each of the grid points used to define the computational domain of the simulation in a vector data format. Since these points (i.e., ADCIRC+SWAN grid) have a different resolution than the infrastructure system under analysis (i.e., building locations), the storm outputs are converted to a surface data format and then the value at each building location is extracted from it. This is repeated for each one of the storms under analysis and then the ouput data is (IMs at each building location) is exported as a csv file. This file is used to support further analysis in the context of risk assessment or machine learning applications, as predictors or response of a system. The workflow of analysis is as follows:
 
 ![caption](img/Fig1_Updated.jpg)
 
+## Storm data analysis using Jupyter notebooks
 
-## Opening a QGIS session in DesignSafe
+## Geospatial analysis via QGIS
+
+### Opening a QGIS session in DesignSafe
 
 To access QGIS via DesignSafe go to [Workspace -> Tools & Applications -> Visualization -> QGIS Desktop 3.16](https://www.designsafe-ci.org/rw/workspace/#!/qgis-duvd-3.16.3u2). You will be prompted the following window:
 
@@ -52,17 +56,9 @@ You will be directed to an interactive QGIS session, create a new project by cli
 
 ![Fig4](img/Fig4.jpg)
 
-### Header2 Subheading
+### Modify user inputs and run the python script
 
-In aliquam sem fringilla ut morbi. Interdum varius sit amet mattis vulputate enim nulla aliquet. Sit amet mattis vulputate enim nulla.  In egestas erat imperdiet sed euismod nisi porta lorem. Eget nulla facilisi etiam dignissim diam.  Facilisi cras fermentum odio eu feugiat. Velit aliquet sagittis id consectetur. Vel quam elementum pulvinar etiam.  Ut diam quam nulla porttitor massa id neque aliquam. Sodales ut etiam sit amet nisl.  Scelerisque varius morbi enim nunc faucibus a. Sit amet volutpat consequat mauris nunc. Et leo duis ut diam.
-
-*Add images to the folder img and use relative path to specify the location of the image.*   
-
-![caption](img/mkdocs-template.png)
-> Use case template design
-
-
-## Header3
+## Visualization of the outputs
 
 Morbi tristique senectus et netus et. Tristique senectus et netus et malesuada fames.  Eu mi bibendum neque egestas congue quisque. Id consectetur purus ut faucibus pulvinar elementum integer enim. Nunc consequat interdum varius sit amet mattis vulputate enim nulla.  Porta nibh venenatis cras sed felis eget. Dui id ornare arcu odio ut sem nulla pharetra diam. Pellentesque habitant morbi tristique senectus et netus et. Commodo nulla facilisi nullam vehicula ipsum a arcu. Nisi porta lorem mollis aliquam ut porttitor leo.
 
@@ -72,9 +68,6 @@ Numbered list
 2. second item
 3. third item
 
-### Header3 subheading
-
-Ac feugiat sed lectus vestibulum mattis ullamcorper. Et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. Scelerisque eu ultrices vitae auctor eu augue ut lectus arcu.  Imperdiet proin fermentum leo vel orci porta non pulvinar. Dictumst quisque sagittis purus sit amet. Aliquam purus sit amet luctus. Aliquet bibendum enim facilisis gravida neque convallis a cras. Orci porta non pulvinar neque laoreet suspendisse. Urna neque viverra justo nec ultrices dui.
 
 **Example Table**
 
