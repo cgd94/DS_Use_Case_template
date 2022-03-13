@@ -78,6 +78,22 @@ You will be directed to an interactive QGIS session, create a new project by cli
 
 ### Modify user inputs and run the python script
 
+A python script called [IM_Extract](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/QGIS/IM_Extract) is provided to extract the desired IMs at specific locations. Follow these steps to use this code:
+
+1. Create a folder to store the outputs of the analysis in your *My data* folder in DS
+2. Provide a csv file that specifies the points for which you wish to obtain the intensity parameters. This file should be in the following format (see the [*Complete_Building_Data*](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/QGIS/IM_Extract) file for an example of the building stock of Galveston Island, TX):
+    a. The first column should contain an ID (e.g., number of the row)
+    b. The second column corresponds to the longitude of each location
+    c. The third column corresponds to the latitude of each location
+4. Create a folder named *Storms* in which you will store the data fromt the different storms
+5. Within the *Storms* folder, create a folder for each one of the storms you wish to analyze. Each folder should contain the output csv files from the ADCIRC+SWAN simulations (e.g., surge_max, wave_H_max.csv). In our case study, we will use three different [storms](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/QGIS/IM_Extract/Storms)
+
+Once the folder of analysis is created in your Data Depot, we can proceed to perform the geospatial analysis in QGIS. Open the python console within QGIS, click the *Show Editor* button and click *Open Script*:
+
+In the file explorer, go to your data folder and open the [IM_Extract](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/QGIS/IM_Extract) script:
+
+
+
 ## Visualization of the outputs
 
 Morbi tristique senectus et netus et. Tristique senectus et netus et malesuada fames.  Eu mi bibendum neque egestas congue quisque. Id consectetur purus ut faucibus pulvinar elementum integer enim. Nunc consequat interdum varius sit amet mattis vulputate enim nulla.  Porta nibh venenatis cras sed felis eget. Dui id ornare arcu odio ut sem nulla pharetra diam. Pellentesque habitant morbi tristique senectus et netus et. Commodo nulla facilisi nullam vehicula ipsum a arcu. Nisi porta lorem mollis aliquam ut porttitor leo.
