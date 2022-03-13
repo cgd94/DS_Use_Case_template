@@ -7,6 +7,7 @@
 This use case study shows how to automate the extraction of storm intensity parameters at the structure level to support regional risk assessment studies. This example leverages QGIS and python scripts to obtain the surge elevation and significant wave height from multiple storms at specific building locations. The case study also shows how to visualize the outputs in QGIS and export them as a web map. The followig DesignSafe resources are leveraged in this example: 
 
 [Geospatial data analysis and Visualization on DS - QGIS](https://www.designsafe-ci.org/rw/workspace/#!/qgis-duvd-3.16.3u2)
+
 [Jupyter notebooks on DS Jupyterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis)
 
 ## Background 
@@ -39,6 +40,25 @@ In order to relate the storm data to the building portfolio data, it is necessar
 ![caption](img/Fig1_Updated.jpg)
 
 ## Storm data analysis using Jupyter notebooks
+
+To read the ADCIRC+SWAN storm simulation outputs, two Jupyter notebooks are provided, which can extract the maximum surge elevation and significant wave height values within a particular region. The [Read_Surge](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/QGIS/Read_ADCIRC) Jupyter notebook takes as an input the *fort.63.nc* ADCIRC+SWAN output file and provides a csv file with the surge elevation value at each of the points within the region specified by the user. Specifying a region helps to reduce the computational time and to provide the outputs only on the region of interest for the user. Similarly, the [Read_WaveHS](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/QGIS/Read_ADCIRC) Jupyter notebook, reads the *swan_HS.63.nc* file and provides the significant wave height in the grid points of the specified area. 
+
+To use the Jupyter notebooks, the user must:
+
+1. Create a new folder in *My data* and copy the Jupyter notebooks from the *Community Data* folder
+2. Ensure that the *fort.63.nc* and *swan_HS.63.nc* are located in the same folder as the Jupyer notebooks
+3. Change the coordinates of the area of interest in [6]:
+
+``` python
+# Example of a polygon that contains Galveston Island, TX (The coordinates can be obtained from Google maps)
+polygon = Polygon([(-95.20669, 29.12035), (-95.14008, 29.04294), (-94.67968, 29.35433), (-94.75487, 29.41924), (-95.20669, 29.12035)])
+```
+4. Modify the name of the output csv file in [8] (if desired):
+``` python
+# In this example, the output name of the csv surge elevation file is "surge_max"
+with open('surge_max.csv','w') as f1:
+```
+Once the Jupyter notebooks run, two output csv files containing the surge elevation and significant wave height in the area of interest should be generated and saved in your folder. The first two columns of the csv file correspond to the geographical coordinates (i.e., longitud and latitude) of the grid point, and the third one corresponds to the respective intensity measure (surge elevation or significant wave height).
 
 ## Geospatial analysis via QGIS
 
