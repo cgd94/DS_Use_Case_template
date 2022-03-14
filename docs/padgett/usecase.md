@@ -86,7 +86,7 @@ A python script called [IM_Extract](https://www.designsafe-ci.org/data/browser/p
     b. The second column corresponds to the longitude of each location
     c. The third column corresponds to the latitude of each location
 4. Create a folder named *Storms* in which you will store the data fromt the different storms
-5. Within the *Storms* folder, create a folder for each one of the storms you wish to analyze. Each folder should contain the output csv files from the ADCIRC+SWAN simulations (e.g., surge_max, wave_H_max.csv). In our case study, we will use three different [storms](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/QGIS/IM_Extract/Storms)
+5. Within the *Storms* folder, create a folder for each one of the storms you wish to analyze. Each folder should contain the output csv files from the ADCIRC+SWAN simulations (e.g., surge_max, wave_H_max.csv). In our case study, we will use three different [storms](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/QGIS/IM_Extract/Storms).
 
 Once the folder of analysis is created in your Data Depot, we can proceed to perform the geospatial analysis in QGIS. Open the python console within QGIS, click the *Show Editor* button and click *Open Script*:
 
@@ -115,51 +115,33 @@ Once you finish the modifications, click *Run Script*.
 
 ## Visualization of the outputs
 
-Morbi tristique senectus et netus et. Tristique senectus et netus et malesuada fames.  Eu mi bibendum neque egestas congue quisque. Id consectetur purus ut faucibus pulvinar elementum integer enim. Nunc consequat interdum varius sit amet mattis vulputate enim nulla.  Porta nibh venenatis cras sed felis eget. Dui id ornare arcu odio ut sem nulla pharetra diam. Pellentesque habitant morbi tristique senectus et netus et. Commodo nulla facilisi nullam vehicula ipsum a arcu. Nisi porta lorem mollis aliquam ut porttitor leo.
+Once the script finish running, the time taken to run the script will appear in the python console and the layers created in the analysis will be displayed in the *Layers* section (left-bottom window) in QGIS:
 
-Numbered list 
+![Fig7](img/Fig7.jpg)
 
-1. [numbered linked item](https://maps.google.com)
-2. second item
-3. third item
+Right click one of the layers, and go to ***Properties -> Symbology*** to modify the appearance of the layer (e.g., color, size of the symbol):
+
+![Fig8](img/Fig8.jpg)
+
+Click *OK* when you finish the modifications. You will be directed to the main window again, go to the the toolbar and click ***Plugins -> Manage and Install Plugins***. In the search tab type ***qgis2web***, select the plugin and click ***Install Plugin***:
+
+![Fig11](img/Fig11.jpg)
+
+Go to ***Web -> qgis2web -> Create web map***:
+
+![Fig10](img/Fig10.jpg)
+
+In the new window, select the layer(s) that you wish to export in the  ***Layers and Groups*** tab, and modify the appearance of the map in the ***Appearance*** tab. Then go to the ***Export*** tab and click in the icon next to ***Export to folder*** and select your working data folder:
+
+![Fig14](img/Fig14.jpg)
+
+Once you finish, a new web explorer window will open in your interactive session with the exported QGIS map:
+
+![FigMap](img/FigMap.jpg)
+
+Go to your working folder in the Data Depot, a new folder containing the web map will be created. You can download the folder and double click ***Index***, the web map you created will be displayed in the web explorer of your local computer:
+
+![Fig15](img/Fig15.jpg)
 
 
-**Example Table**
 
-| Column 1 | Column 2 | Column 3 |
-|----------|----------|----------|
-| Stampede2| CPU      | 2017     |     
-| Frontera | CPU & GPU| 2019     |     
-
-Or use markdown table generator: [https://www.tablesgenerator.com/markdown_tables](https://www.tablesgenerator.com/markdown_tables)
-
-
-### Math
-
-To generate math equations in markdown.
-
-For inline mode formulas: $`a^2+b^2=c^2`$.
-
-For display mode formulas which appear on a separate line
-```math
-f(x) = \int_{-\infty}^\infty
-\hat f(\xi)\,e^{2 \pi i \xi x}
-\,d\xi
-```
-
-### Code
-
-``` python
-import tensorflow as tf
-```
-
-Highlight specific lines of the code
-
-``` python hl_lines="3 4"
-""" Bubble sort """
-def bubble_sort(items):
-    for i in range(len(items)):
-        for j in range(len(items) - 1 - i):
-            if items[j] > items[j + 1]:
-                items[j], items[j + 1] = items[j + 1], items[j]
-```
